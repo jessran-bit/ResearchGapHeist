@@ -1,0 +1,22 @@
+{
+  "topic": "Gender bias in AI algorithms",
+  "max_team_size": 5,
+  "teams": ["Citation Hunters", "Data Detectives", "Gap Finders", "Source Checkers", "Fact Miners", "Bias Busters"],
+  "cards": {
+    "C01": "Caliskan et al. 2017",
+    "C02": "Bolukbasi et al. 2016",
+    "C03": "Buolamwini & Gebru 2018",
+    "C04": "Reyes & Thompson 2021",
+    "C05": "Kay et al. 2015",
+    "C06": "Lambrecht & Tucker 2019",
+    "C07": "Hardt et al. 2016",
+    "C08": "Datta et al. 2015",
+    "C09": "Nakamura et al. 2022",
+    "C10": "Zhao et al. 2017",
+    "C11": "Kotek et al. 2023",
+    "C12": "Chen et al. 2018",
+    "C13": "Wan et al. 2023",
+    "C14": "Harrington & Villanueva 2023",
+    "C15": "Kleinberg et al. 2017"
+  }
+}
