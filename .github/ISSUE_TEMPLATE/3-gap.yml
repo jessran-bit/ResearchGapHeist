@@ -1,0 +1,48 @@
+name: "Step 3: Crack the gap"
+description: Write your synthesis paragraph and research question. One per team. You can submit again to replace it.
+title: "[GAP] "
+body:
+  - type: dropdown
+    id: gaptype
+    attributes:
+      label: Gap type
+      options:
+        - Empirical
+        - Methodological
+        - Theoretical
+        - Contextual
+        - Population
+        - Contradictory findings
+        - Practical/Policy
+    validations:
+      required: true
+  - type: textarea
+    id: paragraph
+    attributes:
+      label: Paragraph
+      description: "One paragraph (at least 80 words) that connects the studies. Do not describe them one by one. Cite cards like this: (C01). End with: Therefore, this study aims to..."
+    validations:
+      required: true
+  - type: input
+    id: rq
+    attributes:
+      label: Research question
+    validations:
+      required: true
+  - type: textarea
+    id: trace
+    attributes:
+      label: Trace
+      description: "Show where each key word in your research question comes from. One line each. Format: word -> card"
+      placeholder: |
+        job ads -> C06, C08
+        women -> C03
+    validations:
+      required: true
+  - type: textarea
+    id: ailog
+    attributes:
+      label: AI use log
+      description: "Which AI tools did you use, what did you ask, and what did you keep or change? Write NONE if you did not use AI."
+    validations:
+      required: true

@@ -1,0 +1,28 @@
+name: "Step 2: Submit your literature map"
+description: Group the cards you trust into themes. One map per team. You can submit again to replace it.
+title: "[MAP] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use only cards you believe are Real. Group them by shared idea, not by year or author.
+        The bot will draw your map for you.
+  - type: textarea
+    id: themes
+    attributes:
+      label: Themes
+      description: "One line per theme. Format: Theme name: C01, C05, C10"
+      placeholder: |
+        Bias starts in the data: C01, C02
+        Bias in what AI shows people: C03, C05
+    validations:
+      required: true
+  - type: input
+    id: pair
+    attributes:
+      label: Two cards that disagree
+      description: "Bonus: two real cards that disagree or give different explanations. Example: C02 vs C10. Leave blank if you are not sure. A wrong pair loses 1 point."
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do they disagree?

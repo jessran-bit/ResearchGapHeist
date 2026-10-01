@@ -1,0 +1,36 @@
+name: "Step 4: Review a rival team"
+description: Review another team's gap. Your team gets points for a useful review.
+title: "[REVIEW] "
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Gap issue number
+      description: "The number of the rival team's [GAP] issue. Example: 27"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Tick only what is true. The rival team gets 1 point for each box you tick.
+      options:
+        - label: Has a clear structure
+        - label: Connects the studies instead of listing them one by one
+        - label: Shows patterns across studies
+        - label: Points out limitations of the studies
+        - label: Leads clearly to the research gap
+  - type: textarea
+    id: fix
+    attributes:
+      label: One thing to fix
+      description: Be specific. At least 15 words.
+    validations:
+      required: true
+  - type: textarea
+    id: ai
+    attributes:
+      label: AI use
+      description: Did you use AI to help review? What did you ask? Write NONE if you did not.
+    validations:
+      required: true

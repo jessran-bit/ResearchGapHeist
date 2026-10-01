@@ -1,0 +1,27 @@
+name: "Step 0: Join a team"
+description: Do this first. Each person joins one team.
+title: "[JOIN] "
+body:
+  - type: markdown
+    attributes:
+      value: "Pick your team. You can only join once, and each team can have up to 5 people."
+  - type: dropdown
+    id: team
+    attributes:
+      label: Team
+      options:
+        - Citation Hunters
+        - Data Detectives
+        - Gap Finders
+        - Source Checkers
+        - Fact Miners
+        - Bias Busters
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Your name
+      description: As it appears in the class list.
+    validations:
+      required: true

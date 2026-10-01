@@ -1,0 +1,53 @@
+name: "Step 1: Check a card"
+description: Submit your verdict for one evidence card. One form per card.
+title: "[VERDICT] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read the card in CARDS.md. Then find the actual paper.
+        Only your team's FIRST verdict on each card counts, so check before you submit.
+  - type: dropdown
+    id: card
+    attributes:
+      label: Card
+      options:
+        - "C01: Caliskan et al. 2017"
+        - "C02: Bolukbasi et al. 2016"
+        - "C03: Buolamwini & Gebru 2018"
+        - "C04: Reyes & Thompson 2021"
+        - "C05: Kay et al. 2015"
+        - "C06: Lambrecht & Tucker 2019"
+        - "C07: Hardt et al. 2016"
+        - "C08: Datta et al. 2015"
+        - "C09: Nakamura et al. 2022"
+        - "C10: Zhao et al. 2017"
+        - "C11: Kotek et al. 2023"
+        - "C12: Chen et al. 2018"
+        - "C13: Wan et al. 2023"
+        - "C14: Harrington & Villanueva 2023"
+        - "C15: Kleinberg et al. 2017"
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Verdict
+      options:
+        - "Real: the paper exists and the summary is correct"
+        - "Twisted: the paper exists but the summary is wrong"
+        - "Fake: the paper does not exist"
+    validations:
+      required: true
+  - type: input
+    id: proof
+    attributes:
+      label: Proof
+      description: Paste a link to the actual paper (DOI, Google Scholar, or publisher page). If you could not find it, write NOT FOUND and what you searched.
+    validations:
+      required: true
+  - type: textarea
+    id: twist
+    attributes:
+      label: If Twisted, what does the paper really say?
+      description: Leave blank if your verdict is Real or Fake.

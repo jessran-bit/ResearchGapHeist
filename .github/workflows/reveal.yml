@@ -1,0 +1,31 @@
+name: Reveal answers
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: referee
+  cancel-in-progress: false
+
+jobs:
+  reveal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Score everything and reveal the answers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANSWER_KEY: ${{ secrets.ANSWER_KEY }}
+        run: python3 scripts/referee.py --reveal
+      - name: Publish the results
+        run: |
+          git config user.name "heist-referee"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add LEADERBOARD.md ANSWERS.md .game/revealed
+          git commit -m "Reveal answers and final scores"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 3; done
+          exit 1

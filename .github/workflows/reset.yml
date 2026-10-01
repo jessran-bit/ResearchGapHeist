@@ -1,0 +1,27 @@
+name: Reset game
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type RESET to clear the leaderboard and answers so you can run the game again. Old issues will be ignored.
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  reset:
+    if: ${{ inputs.confirm == 'RESET' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          rm -f ANSWERS.md .game/revealed
+          mkdir -p .game && date -u +%Y-%m-%dT%H:%M:%SZ > .game/start
+          printf '# Leaderboard\n\nNo teams yet. Start with Step 0 in the README.\n' > LEADERBOARD.md
+          git config user.name "heist-referee"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Reset game" || exit 0
+          git push
